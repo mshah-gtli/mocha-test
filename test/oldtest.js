@@ -10,27 +10,26 @@ let driver = new Builder()
 .forBrowser('firefox')
 .build();
 
-describe( 'Test for DotD HTML5 using RYANCore' , function(){
+describe( 'Test for google' , function(){
     
        before(function(){
-            return driver.get( this.url);   
+            driver.get( this.url);   
        });
     
        after(function(){
-    
-           return driver.quit();
+           driver.quit();
     
        });
 
         it( 'Should Launch the Test for testing google',function(done) {
+            this.timeout(10000);
             try{
             driver.wait(until.titleIs('Google'), 10000);
 
-            
-        }catch(error){
-            done(error);
-        }
-            
+            }catch(error){
+                done(error);
+            }
+          done();  
             
         });
                     

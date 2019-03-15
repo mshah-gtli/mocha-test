@@ -15,3 +15,6 @@ Create test folder as mocha is by default work for folder test
 Create indexTest.js file inside test folder
 
 In case of failure if you do not want to see detailed error change test to mocha || true
+
+execute a single test: npm run test-single test/indexTest.js
+Execute a perticular test inside a file: npm run test-single test/indexTest.js -g 'Test Name Goes here'

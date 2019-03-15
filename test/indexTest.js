@@ -3,6 +3,8 @@ const assert = require('chai').assert;
 //const addNumbers = require('../app').addNumbers;
 const app = require('../index');
 
+var expect = assert.expect;
+
 // Results
 sayHelloResult = app.sayHello();
 addNumbersResult = app.addNumbers(5,5);
@@ -54,16 +56,21 @@ describe('App', function(){
 
 describe('retries', function() {
     // Retry all tests in this suite up to 4 times
-    this.retries(4);
-  
-    beforeEach(function() {
-      browser.get('http://www.yahoo.com');
-    });
+    //this.retries(4);
+
+    let arr = {value:1};
+
+    function increase(arr){
+        arr.value++;
+        if(arr.value > 3) return true;
+        return false;
+    }
+    
   
     it('should succeed on the 3rd try', function() {
       // Specify this test to only retry up to 2 times
       this.retries(2);
-      expect($('.foo').isDisplayed()).to.eventually.be.true;
+      assert.equal(increase(arr), true);
     });
   });
   
