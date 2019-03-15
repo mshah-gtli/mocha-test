@@ -4,7 +4,8 @@
   "description": "Simple test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha || true",
+    "test-single": "mocha $1"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/mshah-gtli/mocha-test/issues"
   },
-  "homepage": "https://github.com/mshah-gtli/mocha-test#readme"
+  "homepage": "https://github.com/mshah-gtli/mocha-test#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
 }
